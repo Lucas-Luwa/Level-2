@@ -16,5 +16,8 @@ public class Starter {
 		f.setVisible(true);
 		f.setSize(1000, 1000);
 	
+	
 	}
+	
+
 }

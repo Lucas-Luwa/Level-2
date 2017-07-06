@@ -38,7 +38,32 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 			e.printStackTrace();
 		}
 		OM.addObject(PM); 
-
+		
+		OM.addObject(new Wall(80,80,77,50));
+		OM.addObject(new Wall(225,80,107,50));
+		OM.addObject(new Wall(485,80,107,50));
+		OM.addObject(new Wall(658,80,79,50));
+		OM.addObject(new Wall(398,10,20,120));
+		OM.addObject(new Wall(398,715,20,110));
+		OM.addObject(new Wall(224,195,20,194));
+		OM.addObject(new Wall(224,456,20,108));
+		OM.addObject(new Wall(224,715,20,110));
+		OM.addObject(new Wall(571,715,20,110));
+		OM.addObject(new Wall(571,456,20,108));
+		OM.addObject(new Wall(571,195,20,194));
+		OM.addObject(new Wall(398,195,20,110));
+		OM.addObject(new Wall(658,630,20,108));
+		OM.addObject(new Wall(498,368,10,110));
+		OM.addObject(new Wall(308,368,10,110));
+		OM.addObject(new Wall(138,630,20,108));
+		OM.addObject(new Wall(398,541,20,110));
+		OM.addObject(new Wall(658,454,150,110));
+		OM.addObject(new Wall(658,282,150,110));
+		OM.addObject(new Wall(9,454,150,110));
+		OM.addObject(new Wall(9,282,150,110));
+		OM.addObject(new Wall(310,468,190,10));
+		OM.addObject(new Wall(310,368,70,10));
+		OM.addObject(new Wall(438,368,70,10));
 	}
 
 	void startGame() {

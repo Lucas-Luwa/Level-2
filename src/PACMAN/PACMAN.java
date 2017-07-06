@@ -3,24 +3,23 @@ package PACMAN;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class PACMAN extends GameObject{
-	int x;
+public class PACMAN extends GameObject {
+
+	
 	int speed;
-	int y;
-	int width;
-	int height;
+	
 	boolean left = false;
 	boolean right = false;
 	boolean up = false;
 	boolean down = false;
-	PACMAN(int x, int y, int width, int height){
-		this.x = x;
-		this.y = y;
-		this.width = width;
-		this.height = height;
+
+	PACMAN(int x, int y, int width, int height) {
+		super(x, y, width, height);
+
 		speed = 3;
-		
+
 	}
+
 	void update() {
 		if (left) {
 			x -= speed;
@@ -36,17 +35,17 @@ public class PACMAN extends GameObject{
 		}
 		if (x >= 744) {
 			x = 744;
-		} else if (x <= 20) {
-			x = 20; 
-		} else if (y >= 835) {
+		}
+		if (x <= 20) {
+			x = 20;
+		}
+		if (y >= 835) {
 			y = 835;
-		} else if (y <= 20) {
+		}
+		if (y <= 20) {
 			y = 20;
 		}
-		if(x >= 475 && y >= 794 && y<=823){
-			x = 475;
-			y = 800;
-		}
+
 	}
 
 	void draw(Graphics g) {
@@ -54,6 +53,7 @@ public class PACMAN extends GameObject{
 		g.fillRect(x, y, width, height);
 
 	}
+
 	void left() {
 		x += 10;
 	}

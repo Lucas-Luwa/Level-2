@@ -5,13 +5,15 @@ import java.awt.Graphics;
 
 public class PACMAN extends GameObject {
 
-	
 	int speed;
-	
+
 	boolean left = false;
 	boolean right = false;
 	boolean up = false;
 	boolean down = false;
+	boolean colliding = false;
+
+	GameObject CollidingObject;
 
 	PACMAN(int x, int y, int width, int height) {
 		super(x, y, width, height);
@@ -21,17 +23,35 @@ public class PACMAN extends GameObject {
 	}
 
 	void update() {
+		// collisionBox.setBounds(x, y, width, height);
+				if (colliding) {
+					int xdif = collisionBox.x - CollidingObject.collisionBox.x;
+					int ydif = collisionBox.y - CollidingObject.collisionBox.y;
+					collisionBox.x -= xdif;
+					collisionBox.y -= ydif;
+					System.out.println(xdif+ ":)");
+					System.out.println(ydif);
+
+				}
 		if (left) {
-			x -= speed;
+
+			collisionBox.x -= speed;
+
 		}
 		if (right) {
-			x += speed;
+
+			collisionBox.x += speed;
+
 		}
 		if (up) {
-			y -= speed;
+
+			collisionBox.y -= speed;
+
 		}
 		if (down) {
-			y += speed;
+
+			collisionBox.y += speed;
+
 		}
 		if (x >= 744) {
 			x = 744;
@@ -46,6 +66,11 @@ public class PACMAN extends GameObject {
 			y = 20;
 		}
 
+		
+
+		x = collisionBox.x;
+		y = collisionBox.y;
+
 	}
 
 	void draw(Graphics g) {
@@ -54,19 +79,8 @@ public class PACMAN extends GameObject {
 
 	}
 
-	void left() {
-		x += 10;
+	public void setCollidingObject(GameObject o) {
+		CollidingObject = o;
 	}
 
-	void Right() {
-		x -= 10;
-	}
-
-	void Up() {
-		y += 10;
-	}
-
-	void Down() {
-		y -= 10;
-	}
 }

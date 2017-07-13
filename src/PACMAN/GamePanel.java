@@ -27,7 +27,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Font titleFont3 = new Font("Arial", Font.BOLD, 120);
 	Font titleFont4 = new Font("Arial", Font.PLAIN, 100);
 	PACMAN PM = new PACMAN(250, 700, 50, 50);
-	ObjectManager OM = new ObjectManager();
+	ObjectManager OM = new ObjectManager(PM);
+
 	GamePanel() {
 		t = new Timer(1000 / 60, this);
 		try {
@@ -37,33 +38,52 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		OM.addObject(PM); 
-		
-		OM.addObject(new Wall(80,80,77,50));
-		OM.addObject(new Wall(225,80,107,50));
-		OM.addObject(new Wall(485,80,107,50));
-		OM.addObject(new Wall(658,80,79,50));
-		OM.addObject(new Wall(398,10,20,120));
-		OM.addObject(new Wall(398,715,20,110));
-		OM.addObject(new Wall(224,195,20,194));
-		OM.addObject(new Wall(224,456,20,108));
-		OM.addObject(new Wall(224,715,20,110));
-		OM.addObject(new Wall(571,715,20,110));
-		OM.addObject(new Wall(571,456,20,108));
-		OM.addObject(new Wall(571,195,20,194));
-		OM.addObject(new Wall(398,195,20,110));
-		OM.addObject(new Wall(658,630,20,108));
-		OM.addObject(new Wall(498,368,10,110));
-		OM.addObject(new Wall(308,368,10,110));
-		OM.addObject(new Wall(138,630,20,108));
-		OM.addObject(new Wall(398,541,20,110));
-		OM.addObject(new Wall(658,454,150,110));
-		OM.addObject(new Wall(658,282,150,110));
-		OM.addObject(new Wall(9,454,150,110));
-		OM.addObject(new Wall(9,282,150,110));
-		OM.addObject(new Wall(310,468,190,10));
-		OM.addObject(new Wall(310,368,70,10));
-		OM.addObject(new Wall(438,368,70,10));
+		OM.addObject(PM);
+
+		OM.addObject(new Wall(80, 80, 77, 50));
+		OM.addObject(new Wall(225, 80, 107, 50));
+		OM.addObject(new Wall(485, 80, 107, 50));
+		OM.addObject(new Wall(658, 80, 79, 50));
+		OM.addObject(new Wall(398, 10, 20, 120));
+		OM.addObject(new Wall(398, 715, 20, 110));
+		OM.addObject(new Wall(224, 195, 20, 194));
+		OM.addObject(new Wall(224, 456, 20, 108));
+		OM.addObject(new Wall(224, 715, 20, 110));
+		OM.addObject(new Wall(571, 715, 20, 110));
+		OM.addObject(new Wall(571, 456, 20, 108));
+		OM.addObject(new Wall(571, 195, 20, 194));
+		OM.addObject(new Wall(398, 195, 20, 110));
+		OM.addObject(new Wall(658, 630, 20, 108));
+		OM.addObject(new Wall(498, 368, 10, 110));
+		OM.addObject(new Wall(308, 368, 10, 110));
+		OM.addObject(new Wall(138, 630, 20, 108));
+		OM.addObject(new Wall(398, 541, 20, 110));
+		OM.addObject(new Wall(658, 454, 150, 110));
+		OM.addObject(new Wall(658, 282, 150, 110));
+		OM.addObject(new Wall(9, 454, 150, 110));
+		OM.addObject(new Wall(9, 282, 150, 110));
+		OM.addObject(new Wall(310, 468, 190, 10));
+		OM.addObject(new Wall(310, 368, 70, 10));
+		OM.addObject(new Wall(438, 368, 70, 10));
+		OM.addObject(new Wall(78, 196, 80, 20));
+		OM.addObject(new Wall(658, 196, 80, 20));
+		OM.addObject(new Wall(308, 196, 198, 20));
+		OM.addObject(new Wall(308, 544, 198, 20));
+		OM.addObject(new Wall(308, 716, 198, 20));
+		OM.addObject(new Wall(484, 282, 90, 20));
+		OM.addObject(new Wall(224, 282, 106, 20));
+		OM.addObject(new Wall(80, 629, 70, 20));
+		OM.addObject(new Wall(224, 629, 106, 20));
+		OM.addObject(new Wall(484, 629, 108, 20));
+		OM.addObject(new Wall(658, 629, 80, 20));
+		OM.addObject(new Wall(78, 803, 253, 20));
+		OM.addObject(new Wall(483, 803, 253, 20));
+		OM.addObject(new Wall(0, 716, 70, 20));
+		OM.addObject(new Wall(744, 716, 70, 20));
+		OM.addObject(new Wall(0, 0, 810, 18));
+		OM.addObject(new Wall(800, 0, 18, 900));
+		OM.addObject(new Wall(0, 0, 18, 900));
+		OM.addObject(new Wall(0, 884, 900, 20));
 	}
 
 	void startGame() {
@@ -112,19 +132,18 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		}
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			PM.down = true;
-			PM.Up();
 
 		}
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 			PM.left = true;
-			PM.Right();
+
 		}
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			PM.left();
+
 			PM.right = true;
 		}
 		if (e.getKeyCode() == KeyEvent.VK_UP) {
-			PM.Down();
+
 			PM.up = true;
 		}
 
@@ -145,6 +164,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 	void updateGameState() {
 		OM.update();
+
 	}
 
 	void updateEndState() {
@@ -164,7 +184,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	void drawGameState(Graphics g) {
 		g.drawImage(PACIMG, 0, 0, 814, 900, null);
 		OM.draw(g);
-		
+
 	}
 
 	void drawEndState(Graphics g) {

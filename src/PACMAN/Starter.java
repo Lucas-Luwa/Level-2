@@ -38,6 +38,6 @@ public class Starter {
 		p.startGame();
 		f.addKeyListener(p);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
- 
+
 	}
 }

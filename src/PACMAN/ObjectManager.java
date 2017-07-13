@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class ObjectManager {
+	PACMAN P;
 	ArrayList<GameObject> objects;
 
 	private int score = 0;
@@ -12,8 +13,9 @@ public class ObjectManager {
 	long enemyTimer = 0;
 	int enemySpawnTime = 1000;
 
-	public ObjectManager() {
+	public ObjectManager(PACMAN P) {
 		objects = new ArrayList<GameObject>();
+		this.P = P;
 	}
 
 	public void addObject(GameObject o) {
@@ -25,7 +27,7 @@ public class ObjectManager {
 			GameObject o = objects.get(i);
 			o.update();
 		}
-
+		checkCollision();
 		purgeObjects();
 	}
 
@@ -53,17 +55,22 @@ public class ObjectManager {
 	// }
 	//
 	public void checkCollision() {
+		boolean c = false;
 		for (int i = 0; i < objects.size(); i++) {
 			for (int j = i + 1; j < objects.size(); j++) {
 				GameObject o1 = objects.get(i);
 				GameObject o2 = objects.get(j);
 
-				if (o1.collisionBox.intersects(o2.collisionBox)) {
+				if (P.collisionBox.intersects(o2.collisionBox)) {
 
+					c = true;
+					P.setCollidingObject(o2);
 				}
 
 			}
+
 		}
+		P.colliding = c;
 	}
 
 	public int getScore() {

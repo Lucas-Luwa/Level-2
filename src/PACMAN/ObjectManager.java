@@ -71,6 +71,7 @@ public class ObjectManager {
 
 		}
 		P.colliding = c;
+		//:)
 	}
 
 	public int getScore() {

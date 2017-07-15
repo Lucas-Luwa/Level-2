@@ -81,8 +81,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		OM.addObject(new Wall(0, 716, 70, 20));
 		OM.addObject(new Wall(744, 716, 70, 20));
 		OM.addObject(new Wall(0, 0, 810, 18));
-		OM.addObject(new Wall(800, 0, 18, 900));
-		OM.addObject(new Wall(0, 0, 18, 900));
+		OM.addObject(new Wall(800, 0, 18, 390));
+		OM.addObject(new Wall(0, 0, 18, 390));
+		OM.addObject(new Wall(800, 455, 18, 450));
+		OM.addObject(new Wall(0, 455, 18, 450));
 		OM.addObject(new Wall(0, 884, 900, 20));
 	}
 

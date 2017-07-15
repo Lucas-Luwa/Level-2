@@ -65,6 +65,9 @@ public class PACMAN extends GameObject {
 		if (y <= 20) {
 			y = 20;
 		}
+		if(x<=0) {
+			x = 800;
+		}
 
 		
 

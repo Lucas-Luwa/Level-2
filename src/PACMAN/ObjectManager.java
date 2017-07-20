@@ -18,6 +18,10 @@ public class ObjectManager {
 		this.P = P;
 	}
 
+	public ObjectManager(int x, int y, int width, int height) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void addObject(GameObject o) {
 		objects.add(o);
 	}
@@ -55,6 +59,7 @@ public class ObjectManager {
 	// }
 	//
 	public void checkCollision() {
+	System.out.println(score);
 		boolean c = false;
 		for (int i = 0; i < objects.size(); i++) {
 			for (int j = i + 1; j < objects.size(); j++) {
@@ -62,16 +67,21 @@ public class ObjectManager {
 				GameObject o2 = objects.get(j);
 
 				if (P.collisionBox.intersects(o2.collisionBox)) {
-
+					if(o2 instanceof Wall){
 					c = true;
 					P.setCollidingObject(o2);
+					}
+					if(o2 instanceof Dot){
+						o2.isAlive = false;
+						score+=1;
+					}
 				}
 
 			}
 
 		}
 		P.colliding = c;
-		
+
 	}
 
 	public int getScore() {

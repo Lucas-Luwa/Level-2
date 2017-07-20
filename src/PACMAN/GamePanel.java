@@ -26,9 +26,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Font titleFont2 = new Font("Arial", Font.PLAIN, 50);
 	Font titleFont3 = new Font("Arial", Font.BOLD, 120);
 	Font titleFont4 = new Font("Arial", Font.PLAIN, 100);
-	PACMAN PM = new PACMAN(250, 700, 50, 50);
+	PACMAN PM = new PACMAN(100, 750, 50, 50);
 	ObjectManager OM = new ObjectManager(PM);
-
+	Dot d = new Dot(50, 50, 10, 10);
+	Dot d2 = new Dot(100, 50, 10, 10);
+	Dot d3 = new Dot(150, 50, 10, 10);
 	GamePanel() {
 		t = new Timer(1000 / 60, this);
 		try {
@@ -39,7 +41,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 			e.printStackTrace();
 		}
 		OM.addObject(PM);
-
+		OM.addObject(d3);
+		OM.addObject(d);
+		OM.addObject(d2);
+		
 		OM.addObject(new Wall(80, 80, 77, 50));
 		OM.addObject(new Wall(225, 80, 107, 50));
 		OM.addObject(new Wall(485, 80, 107, 50));
@@ -180,14 +185,14 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.setColor(Color.GREEN);
 		g.drawString("PAC MAN!", 30, 200);
 		g.setFont(titleFont2);
-		g.drawString("Press 'Enter' to continue.", 120, 400);
+		g.drawString("Press ''Enter'' to continue.", 120, 400);
 	}
 
 	void drawGameState(Graphics g) {
 		g.drawImage(PACIMG, 0, 0, 814, 900, null);
 		OM.draw(g);
 		g.setColor(Color.YELLOW);
-		g.fillRect(50, 50, 10, 10);
+	/*	g.fillRect(50, 50, 10, 10);
 		g.fillRect(100, 50, 10, 10);
 		g.fillRect(150, 50, 10, 10);
 		g.fillRect(200, 50, 10, 10);
@@ -201,6 +206,44 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.fillRect(650, 50, 10, 10);
 		g.fillRect(700, 50, 10, 10);
 		g.fillRect(750, 50, 10, 10);
+		g.fillRect(35, 100, 10, 10);
+		g.fillRect(35, 150, 10, 10);
+		g.fillRect(35, 200, 10, 10);
+		g.fillRect(35, 250, 10, 10);
+		g.fillRect(765, 100, 10, 10);
+		g.fillRect(765, 150, 10, 10);
+		g.fillRect(765, 200, 10, 10);
+		g.fillRect(765, 250, 10, 10);
+		g.fillRect(185, 100, 10, 10);
+		g.fillRect(185, 151, 10, 10);
+		g.fillRect(185, 202, 10, 10);
+		g.fillRect(185, 253, 10, 10);
+		g.fillRect(185, 304, 10, 10);
+		g.fillRect(185, 355, 10, 10);
+		g.fillRect(185, 406, 10, 10);
+		g.fillRect(185, 457, 10, 10);
+		g.fillRect(185, 508, 10, 10);
+		g.fillRect(185, 559, 10, 10);
+		g.fillRect(185, 610, 10, 10);
+		g.fillRect(185, 661, 10, 10);
+		g.fillRect(185, 712, 10, 10);
+		g.fillRect(185, 763, 10, 10);
+		g.fillRect(620, 100, 10, 10);
+		g.fillRect(620, 151, 10, 10);
+		g.fillRect(620, 202, 10, 10);
+		g.fillRect(620, 253, 10, 10);
+		g.fillRect(620, 304, 10, 10);
+		g.fillRect(620, 355, 10, 10);
+		g.fillRect(620, 406, 10, 10);
+		g.fillRect(620, 457, 10, 10);
+		g.fillRect(620, 508, 10, 10);
+		g.fillRect(620, 559, 10, 10);
+		g.fillRect(620, 610, 10, 10);
+		g.fillRect(620, 661, 10, 10);
+		g.fillRect(620, 712, 10, 10);
+		g.fillRect(620, 763, 10, 10);
+		
+	*/	
 		
 
 	}
@@ -212,7 +255,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.setFont(titleFont3);
 		g.drawString("Game Over!", 40, 200);
 		g.setFont(titleFont4);
-		g.drawString("Points: " + "", 200, 400);
+		g.drawString("Points: " +OM.getScore()  , 200, 400);
 
 	}
 

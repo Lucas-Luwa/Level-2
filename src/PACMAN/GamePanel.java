@@ -31,6 +31,53 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Dot d = new Dot(50, 50, 10, 10);
 	Dot d2 = new Dot(100, 50, 10, 10);
 	Dot d3 = new Dot(150, 50, 10, 10);
+	Dot d4 = new Dot(200, 50, 10, 10);
+	Dot d5 = new Dot(250, 50, 10, 10);
+	Dot d6 = new Dot(300, 50, 10, 10);
+	Dot d7 = new Dot(350, 50, 10, 10);
+	Dot d8 = new Dot(700, 50, 10, 10);
+	Dot d9 = new Dot(450, 50, 10, 10);
+	Dot d10 = new Dot(500, 50, 10, 10);
+	Dot d11 = new Dot(550, 50, 10, 10);
+	Dot d12 = new Dot(600, 50, 10, 10);
+	Dot d13 = new Dot(650, 50, 10, 10);
+	Dot d14 = new Dot(750, 50, 10, 10);
+	Dot d15 = new Dot(35, 100, 10, 10);
+	Dot d16 = new Dot(35, 150, 10, 10);
+	Dot d17 = new Dot(35, 200, 10, 10);
+	Dot d18 = new Dot(35, 250, 10, 10);
+	Dot d19 = new Dot(765, 150, 10, 10);
+	Dot d20 = new Dot(765, 200, 10, 10);
+	Dot d21 = new Dot(765, 250, 10, 10);
+	Dot d22 = new Dot(765, 100, 10, 10);
+	Dot d23 = new Dot(185, 100, 10, 10);
+	Dot d24 = new Dot(185, 151, 10, 10);
+	Dot d25 = new Dot(185, 202, 10, 10);
+	Dot d26 = new Dot(185, 253, 10, 10);
+	Dot d27 = new Dot(185, 304, 10, 10);
+	Dot d28 = new Dot(185, 406, 10, 10);
+	Dot d29 = new Dot(185, 457, 10, 10);
+	Dot d30 = new Dot(185, 508, 10, 10);
+	Dot d31 = new Dot(185, 559, 10, 10);
+	Dot d32 = new Dot(185, 610, 10, 10);
+	Dot d33 = new Dot(185, 661, 10, 10);
+	Dot d34 = new Dot(185, 712, 10, 10);
+	Dot d35 = new Dot(185, 763, 10, 10);
+	Dot d36 = new Dot(620, 100, 10, 10);
+	Dot d37 = new Dot(620, 151, 10, 10);
+	Dot d38 = new Dot(620, 202, 10, 10);
+	Dot d39 = new Dot(620, 253, 10, 10);
+	Dot d40 = new Dot(620, 304, 10, 10);
+	Dot d41 = new Dot(620, 355, 10, 10);
+	Dot d42 = new Dot(620, 406, 10, 10);
+	Dot d43 = new Dot(620, 457, 10, 10);
+	Dot d44 = new Dot(620, 508, 10, 10);
+	Dot d45 = new Dot(620, 559, 10, 10);
+	Dot d46 = new Dot(620, 610, 10, 10);
+	Dot d47 = new Dot(620, 661, 10, 10);
+	Dot d48 = new Dot(620, 712, 10, 10);
+	Dot d49 = new Dot(620, 763, 10, 10);
+	Dot d50 = new Dot(185, 355, 10, 10);
 	GamePanel() {
 		t = new Timer(1000 / 60, this);
 		try {
@@ -44,7 +91,53 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		OM.addObject(d3);
 		OM.addObject(d);
 		OM.addObject(d2);
-		
+		OM.addObject(d4);
+		OM.addObject(d5);
+		OM.addObject(d6);
+		OM.addObject(d7);
+		OM.addObject(d8);
+		OM.addObject(d9);
+		OM.addObject(d10);
+		OM.addObject(d11);
+		OM.addObject(d12);
+		OM.addObject(d13);
+		OM.addObject(d14);
+		OM.addObject(d15);
+		OM.addObject(d16);
+		OM.addObject(d17);
+		OM.addObject(d18);
+		OM.addObject(d19);
+		OM.addObject(d20);
+		OM.addObject(d21);
+		OM.addObject(d22);
+		OM.addObject(d23);
+		OM.addObject(d24);
+		OM.addObject(d25);
+		OM.addObject(d26);
+		OM.addObject(d27);
+		OM.addObject(d28);
+		OM.addObject(d29);
+		OM.addObject(d30);
+		OM.addObject(d31);
+		OM.addObject(d32);
+		OM.addObject(d33);
+		OM.addObject(d34);
+		OM.addObject(d35);
+		OM.addObject(d36);
+		OM.addObject(d37);
+		OM.addObject(d38);
+		OM.addObject(d39);
+		OM.addObject(d40);
+		OM.addObject(d41);
+		OM.addObject(d42);
+		OM.addObject(d43);
+		OM.addObject(d44);
+		OM.addObject(d45);
+		OM.addObject(d46);
+		OM.addObject(d47);
+		OM.addObject(d48);
+		OM.addObject(d49);
+		OM.addObject(d50);
 		OM.addObject(new Wall(80, 80, 77, 50));
 		OM.addObject(new Wall(225, 80, 107, 50));
 		OM.addObject(new Wall(485, 80, 107, 50));
@@ -192,59 +285,28 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.drawImage(PACIMG, 0, 0, 814, 900, null);
 		OM.draw(g);
 		g.setColor(Color.YELLOW);
-	/*	g.fillRect(50, 50, 10, 10);
-		g.fillRect(100, 50, 10, 10);
-		g.fillRect(150, 50, 10, 10);
-		g.fillRect(200, 50, 10, 10);
-		g.fillRect(250, 50, 10, 10);
-		g.fillRect(300, 50, 10, 10);
-		g.fillRect(350, 50, 10, 10);
-		g.fillRect(450, 50, 10, 10);
-		g.fillRect(500, 50, 10, 10);
-		g.fillRect(550, 50, 10, 10);
-		g.fillRect(600, 50, 10, 10);
-		g.fillRect(650, 50, 10, 10);
-		g.fillRect(700, 50, 10, 10);
-		g.fillRect(750, 50, 10, 10);
-		g.fillRect(35, 100, 10, 10);
-		g.fillRect(35, 150, 10, 10);
-		g.fillRect(35, 200, 10, 10);
-		g.fillRect(35, 250, 10, 10);
-		g.fillRect(765, 100, 10, 10);
-		g.fillRect(765, 150, 10, 10);
-		g.fillRect(765, 200, 10, 10);
-		g.fillRect(765, 250, 10, 10);
-		g.fillRect(185, 100, 10, 10);
-		g.fillRect(185, 151, 10, 10);
-		g.fillRect(185, 202, 10, 10);
-		g.fillRect(185, 253, 10, 10);
-		g.fillRect(185, 304, 10, 10);
-		g.fillRect(185, 355, 10, 10);
-		g.fillRect(185, 406, 10, 10);
-		g.fillRect(185, 457, 10, 10);
-		g.fillRect(185, 508, 10, 10);
-		g.fillRect(185, 559, 10, 10);
-		g.fillRect(185, 610, 10, 10);
-		g.fillRect(185, 661, 10, 10);
-		g.fillRect(185, 712, 10, 10);
-		g.fillRect(185, 763, 10, 10);
-		g.fillRect(620, 100, 10, 10);
-		g.fillRect(620, 151, 10, 10);
-		g.fillRect(620, 202, 10, 10);
-		g.fillRect(620, 253, 10, 10);
-		g.fillRect(620, 304, 10, 10);
-		g.fillRect(620, 355, 10, 10);
-		g.fillRect(620, 406, 10, 10);
-		g.fillRect(620, 457, 10, 10);
-		g.fillRect(620, 508, 10, 10);
-		g.fillRect(620, 559, 10, 10);
-		g.fillRect(620, 610, 10, 10);
-		g.fillRect(620, 661, 10, 10);
-		g.fillRect(620, 712, 10, 10);
-		g.fillRect(620, 763, 10, 10);
-		
-	*/	
-		
+		/*
+		 * g.fillRect(200, 50, 10, 10); g.fillRect(250, 50, 10, 10); g.fillRect(300, 50,
+		 * 10, 10); g.fillRect(350, 50, 10, 10); g.fillRect(450, 50, 10, 10);
+		 * g.fillRect(500, 50, 10, 10); g.fillRect(550, 50, 10, 10); g.fillRect(600, 50,
+		 * 10, 10); g.fillRect(650, 50, 10, 10); g.fillRect(700, 50, 10, 10);
+		 * g.fillRect(750, 50, 10, 10); g.fillRect(35, 100, 10, 10); g.fillRect(35, 150,
+		 * 10, 10); g.fillRect(35, 200, 10, 10); g.fillRect(35, 250, 10, 10);
+		 * g.fillRect(765, 100, 10, 10); g.fillRect(765, 150, 10, 10); g.fillRect(765,
+		 * 200, 10, 10); g.fillRect(765, 250, 10, 10); g.fillRect(185, 100, 10, 10);
+		 * g.fillRect(185, 151, 10, 10); g.fillRect(185, 202, 10, 10); g.fillRect(185,
+		 * 253, 10, 10); g.fillRect(185, 304, 10, 10); g.fillRect(185, 355, 10, 10);
+		 * g.fillRect(185, 406, 10, 10); g.fillRect(185, 457, 10, 10); g.fillRect(185,
+		 * 508, 10, 10); g.fillRect(185, 559, 10, 10); g.fillRect(185, 610, 10, 10);
+		 * g.fillRect(185, 661, 10, 10); g.fillRect(185, 712, 10, 10); g.fillRect(185,
+		 * 763, 10, 10); g.fillRect(620, 100, 10, 10); g.fillRect(620, 151, 10, 10);
+		 * g.fillRect(620, 202, 10, 10); g.fillRect(620, 253, 10, 10); g.fillRect(620,
+		 * 304, 10, 10); g.fillRect(620, 355, 10, 10); g.fillRect(620, 406, 10, 10);
+		 * g.fillRect(620, 457, 10, 10); g.fillRect(620, 508, 10, 10); g.fillRect(620,
+		 * 559, 10, 10); g.fillRect(620, 610, 10, 10); g.fillRect(620, 661, 10, 10);
+		 * g.fillRect(620, 712, 10, 10); g.fillRect(620, 763, 10, 10);
+		 * 
+		 */
 
 	}
 
@@ -255,7 +317,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.setFont(titleFont3);
 		g.drawString("Game Over!", 40, 200);
 		g.setFont(titleFont4);
-		g.drawString("Points: " +OM.getScore()  , 200, 400);
+		g.drawString("Points: " + OM.getScore(), 200, 400);
 
 	}
 

@@ -285,28 +285,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.drawImage(PACIMG, 0, 0, 814, 900, null);
 		OM.draw(g);
 		g.setColor(Color.YELLOW);
-		/*
-		 * g.fillRect(200, 50, 10, 10); g.fillRect(250, 50, 10, 10); g.fillRect(300, 50,
-		 * 10, 10); g.fillRect(350, 50, 10, 10); g.fillRect(450, 50, 10, 10);
-		 * g.fillRect(500, 50, 10, 10); g.fillRect(550, 50, 10, 10); g.fillRect(600, 50,
-		 * 10, 10); g.fillRect(650, 50, 10, 10); g.fillRect(700, 50, 10, 10);
-		 * g.fillRect(750, 50, 10, 10); g.fillRect(35, 100, 10, 10); g.fillRect(35, 150,
-		 * 10, 10); g.fillRect(35, 200, 10, 10); g.fillRect(35, 250, 10, 10);
-		 * g.fillRect(765, 100, 10, 10); g.fillRect(765, 150, 10, 10); g.fillRect(765,
-		 * 200, 10, 10); g.fillRect(765, 250, 10, 10); g.fillRect(185, 100, 10, 10);
-		 * g.fillRect(185, 151, 10, 10); g.fillRect(185, 202, 10, 10); g.fillRect(185,
-		 * 253, 10, 10); g.fillRect(185, 304, 10, 10); g.fillRect(185, 355, 10, 10);
-		 * g.fillRect(185, 406, 10, 10); g.fillRect(185, 457, 10, 10); g.fillRect(185,
-		 * 508, 10, 10); g.fillRect(185, 559, 10, 10); g.fillRect(185, 610, 10, 10);
-		 * g.fillRect(185, 661, 10, 10); g.fillRect(185, 712, 10, 10); g.fillRect(185,
-		 * 763, 10, 10); g.fillRect(620, 100, 10, 10); g.fillRect(620, 151, 10, 10);
-		 * g.fillRect(620, 202, 10, 10); g.fillRect(620, 253, 10, 10); g.fillRect(620,
-		 * 304, 10, 10); g.fillRect(620, 355, 10, 10); g.fillRect(620, 406, 10, 10);
-		 * g.fillRect(620, 457, 10, 10); g.fillRect(620, 508, 10, 10); g.fillRect(620,
-		 * 559, 10, 10); g.fillRect(620, 610, 10, 10); g.fillRect(620, 661, 10, 10);
-		 * g.fillRect(620, 712, 10, 10); g.fillRect(620, 763, 10, 10);
-		 * 
-		 */
+	
 
 	}
 

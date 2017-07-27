@@ -27,7 +27,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Font titleFont3 = new Font("Arial", Font.BOLD, 120);
 	Font titleFont4 = new Font("Arial", Font.PLAIN, 100);
 	PACMAN PM = new PACMAN(100, 750, 50, 50);
-	Ghosts Gerald = new Ghosts(400, 400, 30, 30, PM);
+	Ghosts Gerald = new Ghosts(400, 400, 40, 40, PM);
 
 	ObjectManager OM = new ObjectManager(PM, Gerald);
 

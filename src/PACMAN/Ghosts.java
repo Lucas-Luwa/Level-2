@@ -21,7 +21,7 @@ public class Ghosts extends GameObject {
 	}
 
 	void update() {
-		if (PM.x < x) {
+	/*	if (PM.x < x) {
 			left = true;
 		} else {
 			left = false;
@@ -91,7 +91,9 @@ public class Ghosts extends GameObject {
 		x = collisionBox.x;
 		y = collisionBox.y;
 	}
-
+*/
+		x+=1;
+	}
 	void draw(Graphics g) {
 		g.setColor(Color.GREEN);
 		g.fillRect(x, y, width, height);
@@ -100,5 +102,8 @@ public class Ghosts extends GameObject {
 	public void setCollidingObject(GameObject o1) {
 		CollidingObject = o1;
 
+	}
+	void move(){
+		x+=100;
 	}
 }

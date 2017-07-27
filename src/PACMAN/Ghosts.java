@@ -3,27 +3,46 @@ package PACMAN;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class PACMAN extends GameObject {
-
+public class Ghosts extends GameObject {
+	PACMAN PM;
 	int speed;
-
+	GameObject CollidingObject;
 	boolean left = false;
 	boolean right = false;
 	boolean up = false;
 	boolean down = false;
 	boolean colliding = false;
 
-	GameObject CollidingObject;
-
-	PACMAN(int x, int y, int width, int height) {
+	Ghosts(int x, int y, int width, int height, PACMAN PM) {
 		super(x, y, width, height);
-
-		speed = 2;
-
+		// TODO Auto-generated constructor stub
+		this.PM = PM;
+		speed = 1;
 	}
 
 	void update() {
-		// collisionBox.setBounds(x, y, width, height);
+		if (PM.x < x) {
+			left = true;
+		} else {
+			left = false;
+		}
+		if (PM.y > y) {
+			down = true;
+		} else {
+			down = false;
+		}
+		if (PM.x > x) {
+			right = true;
+		} else {
+			right = false;
+		}
+		if (PM.y < y) {
+			up = true;
+		} else {
+			up = false;
+		}
+	
+
 
 		if (colliding) {
 			int CX = CollidingObject.x;
@@ -68,31 +87,18 @@ public class PACMAN extends GameObject {
 				collisionBox.y += speed;
 
 			}
-
-			if (x <= -width)
-
-			{
-				collisionBox.x = 800;
-			}
-			if (x >= 800 + width)
-
-			{
-				collisionBox.x = 0;
-			}
 		}
 		x = collisionBox.x;
 		y = collisionBox.y;
-
 	}
 
 	void draw(Graphics g) {
-		g.setColor(Color.YELLOW);
+		g.setColor(Color.GREEN);
 		g.fillRect(x, y, width, height);
-
 	}
 
-	public void setCollidingObject(GameObject o) {
-		CollidingObject = o;
-	}
+	public void setCollidingObject(GameObject o1) {
+		CollidingObject = o1;
 
+	}
 }

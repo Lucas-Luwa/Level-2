@@ -6,6 +6,8 @@ import java.util.Random;
 
 public class ObjectManager {
 	PACMAN P;
+	Ghosts Gerald;
+
 	ArrayList<GameObject> objects;
 
 	private int score = 0;
@@ -13,9 +15,11 @@ public class ObjectManager {
 	long enemyTimer = 0;
 	int enemySpawnTime = 1000;
 
-	public ObjectManager(PACMAN P) {
+	public ObjectManager(PACMAN P, Ghosts Gerald) {
 		objects = new ArrayList<GameObject>();
 		this.P = P;
+		this.Gerald = Gerald;
+
 	}
 
 	public ObjectManager(int x, int y, int width, int height) {
@@ -59,30 +63,37 @@ public class ObjectManager {
 	// }
 	//
 	public void checkCollision() {
-	System.out.println(score);
 		boolean c = false;
+		boolean G1 = false;
+		
 		for (int i = 0; i < objects.size(); i++) {
-			for (int j = i + 1; j < objects.size(); j++) {
-				GameObject o1 = objects.get(i);
-				GameObject o2 = objects.get(j);
-
-				if (P.collisionBox.intersects(o2.collisionBox)) {
-					if(o2 instanceof Wall){
+			GameObject o1 = objects.get(i);
+			if (P.collisionBox.intersects(o1.collisionBox)) {
+				if (o1 instanceof Wall) {
 					c = true;
-					P.setCollidingObject(o2);
-					}
-					if(o2 instanceof Dot){
-						o2.isAlive = false;
-						score+=1;
-					}
+					P.setCollidingObject(o1);
+				}
+				if (o1 instanceof Dot) {
+					o1.isAlive = false;
+					score += 1;
+					System.out.println("dot");
+				}
+			}
+			if (Gerald.collisionBox.intersects(o1.collisionBox)) {
+				if (o1 instanceof Wall) {
+					G1 = true;
+					Gerald.setCollidingObject(o1);
 				}
 
 			}
 
+		
+	
+	P.colliding=c;
+	Gerald.colliding=G1;
 		}
-		P.colliding = c;
-
 	}
+	
 
 	public int getScore() {
 		return score;

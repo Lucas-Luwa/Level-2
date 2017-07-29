@@ -83,16 +83,25 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Dot d49 = new Dot(620, 763, 10, 10);
 	Dot d50 = new Dot(185, 355, 10, 10);
 	Dot d51 = new Dot(40, 853, 10, 10);
-	Dot d52 = new Dot(90, 853, 10, 10);
-	Dot d53 = new Dot(140, 853, 10, 10);
-	Dot d54 = new Dot(190, 853, 10, 10);
-	Dot d55 = new Dot(240, 853, 10, 10);
-	Dot d56 = new Dot(290, 853, 10, 10);
-	Dot d57 = new Dot(340, 853, 10, 10);
-	Dot d58 = new Dot(390, 853, 10, 10);
-	Dot d59 = new Dot(440, 853, 10, 10);
-	Dot d60 = new Dot(490, 853, 10, 10);
-
+	Dot d52 = new Dot(89, 853, 10, 10);
+	Dot d53 = new Dot(138, 853, 10, 10);
+	Dot d54 = new Dot(187, 853, 10, 10);
+	Dot d55 = new Dot(236, 853, 10, 10);
+	Dot d56 = new Dot(285, 853, 10, 10);
+	Dot d57 = new Dot(334, 853, 10, 10);
+	Dot d58 = new Dot(383, 853, 10, 10);
+	Dot d59 = new Dot(432, 853, 10, 10);
+	Dot d60 = new Dot(481, 853, 10, 10);
+	Dot d61 = new Dot(530, 853, 10, 10);
+	Dot d62 = new Dot(579, 853, 10, 10);
+	Dot d63 = new Dot(629, 853, 10, 10);
+	Dot d64 = new Dot(678, 853, 10, 10);
+	Dot d65 = new Dot(728, 853, 10, 10);
+	Dot d66 = new Dot(772, 853, 10, 10);
+	Dot d67 = new Dot(30, 420, 10, 10);
+	Dot d68 = new Dot(80, 420, 10, 10);
+	Dot d69 = new Dot(130, 420, 10, 10);
+	//Dot d70 = new Dot(170, 420, 10, 10);
 	GamePanel() {
 		t = new Timer(1000 / 60, this);
 		try {
@@ -165,6 +174,16 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		OM.addObject(d58);
 		OM.addObject(d59);
 		OM.addObject(d60);
+		OM.addObject(d61);
+		OM.addObject(d62);
+		OM.addObject(d63);
+		OM.addObject(d64);
+		OM.addObject(d65);
+		OM.addObject(d66);
+		OM.addObject(d67);
+		OM.addObject(d68);
+		OM.addObject(d69);
+		//OM.addObject(d70);
 		
 		OM.addObject(new Wall(80, 80, 77, 50));
 		OM.addObject(new Wall(225, 80, 107, 50));

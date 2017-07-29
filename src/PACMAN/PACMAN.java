@@ -18,7 +18,7 @@ public class PACMAN extends GameObject {
 	PACMAN(int x, int y, int width, int height) {
 		super(x, y, width, height);
 
-		speed = 2;
+		speed = 10;
 
 	}
 

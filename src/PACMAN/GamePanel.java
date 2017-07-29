@@ -116,6 +116,13 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Dot d82 = new Dot(772, 812, 10, 10);
 	Dot d83 = new Dot(360, 812, 10, 10);
 	Dot d84 = new Dot(450, 812, 10, 10);
+	Dot d85 = new Dot(140, 160, 10, 10);
+	Dot d86 = new Dot(90, 160, 10, 10);
+	Dot d87 = new Dot(140, 250, 10, 10);
+	Dot d88 = new Dot(90, 250, 10, 10);
+	//End
+	Dot d89 = new Dot(360, 812, 10, 10);
+	Dot d90 = new Dot(450, 812, 10, 10);
 
 	GamePanel() {
 		t = new Timer(1000 / 60, this);
@@ -213,6 +220,12 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		OM.addObject(d82);
 		OM.addObject(d83);
 		OM.addObject(d84);
+		OM.addObject(d85);
+		OM.addObject(d86);
+		OM.addObject(d87);
+		OM.addObject(d88);
+		OM.addObject(d89);
+		OM.addObject(d90);
 
 		OM.addObject(new Wall(80, 80, 77, 50));
 		OM.addObject(new Wall(225, 80, 107, 50));

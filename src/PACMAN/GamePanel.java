@@ -27,7 +27,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Font titleFont2 = new Font("Arial", Font.PLAIN, 50);
 	Font titleFont3 = new Font("Arial", Font.BOLD, 120);
 	Font titleFont4 = new Font("Arial", Font.PLAIN, 100);
-	PACMAN PM = new PACMAN(100, 750, 50, 50);
+	PACMAN PM = new PACMAN(385, 480, 50, 50);
 	Ghosts Gerald = new Ghosts(400, 400, 40, 40, PM);
 
 	ObjectManager OM = new ObjectManager(PM, Gerald);
@@ -101,7 +101,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Dot d67 = new Dot(30, 420, 10, 10);
 	Dot d68 = new Dot(80, 420, 10, 10);
 	Dot d69 = new Dot(130, 420, 10, 10);
-	//Dot d70 = new Dot(170, 420, 10, 10);
+	Dot d70 = new Dot(670, 420, 10, 10);
+	Dot d71 = new Dot(720, 420, 10, 10);
+	Dot d72 = new Dot(770, 420, 10, 10);
 	GamePanel() {
 		t = new Timer(1000 / 60, this);
 		try {
@@ -183,8 +185,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		OM.addObject(d67);
 		OM.addObject(d68);
 		OM.addObject(d69);
-		//OM.addObject(d70);
-		
+		OM.addObject(d70);
+		OM.addObject(d71);
+		OM.addObject(d72);
+
 		OM.addObject(new Wall(80, 80, 77, 50));
 		OM.addObject(new Wall(225, 80, 107, 50));
 		OM.addObject(new Wall(485, 80, 107, 50));

@@ -2,18 +2,22 @@ package PACMAN;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
 
 public class Ghosts extends GameObject {
 	PACMAN PM;
 	int speed;
+
 	GameObject CollidingObject;
 	boolean left = false;
 	boolean right = false;
 	boolean up = false;
 	boolean down = false;
 	boolean colliding = false;
+	ArrayList<Integer> xv = new ArrayList<Integer>();
+	ArrayList<Integer> yv = new ArrayList<Integer>();
 
-	Ghosts(int x, int y, int width, int height, PACMAN PM) {
+	public Ghosts(int x, int y, int width, int height, PACMAN PM) {
 		super(x, y, width, height);
 		// TODO Auto-generated constructor stub
 		this.PM = PM;
@@ -21,7 +25,7 @@ public class Ghosts extends GameObject {
 	}
 
 	void update() {
-	/*	if (PM.x < x) {
+		if (PM.x < x) {
 			left = true;
 		} else {
 			left = false;
@@ -41,8 +45,6 @@ public class Ghosts extends GameObject {
 		} else {
 			up = false;
 		}
-	
-
 
 		if (colliding) {
 			int CX = CollidingObject.x;
@@ -88,12 +90,12 @@ public class Ghosts extends GameObject {
 
 			}
 		}
+		System.out.println("hi");
 		x = collisionBox.x;
 		y = collisionBox.y;
+
 	}
-*/
-		x+=1;
-	}
+
 	void draw(Graphics g) {
 		g.setColor(Color.GREEN);
 		g.fillRect(x, y, width, height);
@@ -103,7 +105,8 @@ public class Ghosts extends GameObject {
 		CollidingObject = o1;
 
 	}
-	void move(){
-		x+=100;
+
+	void move() {
+		x += 100;
 	}
 }

@@ -1,3 +1,4 @@
+
 package PACMAN;
 
 import java.util.Random;
@@ -81,6 +82,16 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Dot d48 = new Dot(620, 712, 10, 10);
 	Dot d49 = new Dot(620, 763, 10, 10);
 	Dot d50 = new Dot(185, 355, 10, 10);
+	Dot d51 = new Dot(40, 853, 10, 10);
+	Dot d52 = new Dot(90, 853, 10, 10);
+	Dot d53 = new Dot(140, 853, 10, 10);
+	Dot d54 = new Dot(190, 853, 10, 10);
+	Dot d55 = new Dot(240, 853, 10, 10);
+	Dot d56 = new Dot(290, 853, 10, 10);
+	Dot d57 = new Dot(340, 853, 10, 10);
+	Dot d58 = new Dot(390, 853, 10, 10);
+	Dot d59 = new Dot(440, 853, 10, 10);
+	Dot d60 = new Dot(490, 853, 10, 10);
 
 	GamePanel() {
 		t = new Timer(1000 / 60, this);
@@ -144,6 +155,17 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		OM.addObject(d48);
 		OM.addObject(d49);
 		OM.addObject(d50);
+		OM.addObject(d51);
+		OM.addObject(d52);
+		OM.addObject(d53);
+		OM.addObject(d54);
+		OM.addObject(d55);
+		OM.addObject(d56);
+		OM.addObject(d57);
+		OM.addObject(d58);
+		OM.addObject(d59);
+		OM.addObject(d60);
+		
 		OM.addObject(new Wall(80, 80, 77, 50));
 		OM.addObject(new Wall(225, 80, 107, 50));
 		OM.addObject(new Wall(485, 80, 107, 50));

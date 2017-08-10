@@ -27,7 +27,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Font titleFont2 = new Font("Arial", Font.PLAIN, 50);
 	Font titleFont3 = new Font("Arial", Font.BOLD, 120);
 	Font titleFont4 = new Font("Arial", Font.PLAIN, 100);
-	PACMAN PM = new PACMAN(385, 480, 50, 50);
+	Font titleFont5 = new Font("Arial", Font.PLAIN, 30);
+	PACMAN PM = new PACMAN(385, 660, 50, 50);
 	Ghosts Gerald = new Ghosts(400, 400, 40, 40, PM);
 
 	ObjectManager OM = new ObjectManager(PM, Gerald);
@@ -120,10 +121,28 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Dot d86 = new Dot(90, 160, 10, 10);
 	Dot d87 = new Dot(140, 250, 10, 10);
 	Dot d88 = new Dot(90, 250, 10, 10);
-	//End
-	Dot d89 = new Dot(360, 812, 10, 10);
-	Dot d90 = new Dot(450, 812, 10, 10);
-
+	Dot d89 = new Dot(240, 160, 10, 10);
+	Dot d90 = new Dot(290, 160, 10, 10);
+	Dot d91 = new Dot(340, 160, 10, 10);
+	Dot d92 = new Dot(390, 160, 10, 10);
+	Dot d93 = new Dot(440, 160, 10, 10);
+	Dot d94 = new Dot(490, 160, 10, 10);
+	Dot d95 = new Dot(540, 160, 10, 10);
+	Dot d96 = new Dot(590, 160, 10, 10);
+	Dot d97 = new Dot(670, 160, 10, 10);
+	Dot d98 = new Dot(720, 160, 10, 10);
+	Dot d99 = new Dot(350, 100, 10, 10);
+	Dot d100 = new Dot(450, 100, 10, 10);
+	Dot d101 = new Dot(660, 250, 10, 10);
+	Dot d102 = new Dot(710, 250, 10, 10);
+	Dot d103 = new Dot(660, 600, 10, 10);
+	Dot d104 = new Dot(710, 600, 10, 10);
+	Dot d105 = new Dot(660, 770, 10, 10);
+	Dot d106 = new Dot(710, 770, 10, 10);
+	Dot d107 = new Dot(140, 600, 10, 10);
+	Dot d108 = new Dot(90, 600, 10, 10);
+	Dot d109 = new Dot(90, 770, 10, 10);
+	Dot d110 = new Dot(140, 770, 10, 10);
 	GamePanel() {
 		t = new Timer(1000 / 60, this);
 		try {
@@ -226,7 +245,28 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		OM.addObject(d88);
 		OM.addObject(d89);
 		OM.addObject(d90);
+		OM.addObject(d91);
+		OM.addObject(d92);
+		OM.addObject(d93);
+		OM.addObject(d94);
+		OM.addObject(d95);
+		OM.addObject(d96);
+		OM.addObject(d97);
+		OM.addObject(d98);
+		OM.addObject(d99);
+		OM.addObject(d100);
+		OM.addObject(d101);
+		OM.addObject(d102);
+		OM.addObject(d103);
+		OM.addObject(d104);
+		OM.addObject(d105);
+		OM.addObject(d106);
+		OM.addObject(d107);
+		OM.addObject(d108);
+		OM.addObject(d109);
+		OM.addObject(d110);
 
+		
 		OM.addObject(new Wall(80, 80, 77, 50));
 		OM.addObject(new Wall(225, 80, 107, 50));
 		OM.addObject(new Wall(485, 80, 107, 50));
@@ -368,6 +408,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.drawString("PAC MAN!", 30, 200);
 		g.setFont(titleFont2);
 		g.drawString("Press ''Enter'' to continue.", 120, 400);
+		g.setFont(titleFont5);
+		g.drawString("Use the Up, Down, Left and Right Keys to move.", 80, 600);
+		g.drawString("Collect all the food to win! Beware: Ghosts go through walls!", 5, 650);
 	}
 
 	void drawGameState(Graphics g) {

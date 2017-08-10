@@ -79,7 +79,7 @@ public class ObjectManager {
 					System.out.println("dot");
 				}
 			}
-			if (Gerald.collisionBox.intersects(o1.collisionBox)) {
+		/*	if (Gerald.collisionBox.intersects(o1.collisionBox)) {
 				if (o1 instanceof Wall) {
 					G1 = true;
 					Gerald.setCollidingObject(o1);
@@ -87,10 +87,10 @@ public class ObjectManager {
 
 			}
 
-		
+		*/
 	
 	P.colliding=c;
-	Gerald.colliding=G1;
+	//Gerald.colliding=G1;
 		}
 	}
 	

@@ -143,6 +143,31 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Dot d108 = new Dot(90, 600, 10, 10);
 	Dot d109 = new Dot(90, 770, 10, 10);
 	Dot d110 = new Dot(140, 770, 10, 10);
+	Dot d111 = new Dot(90, 680, 10, 10);
+	Dot d112 = new Dot(90, 720, 10, 10);
+	Dot d113 = new Dot(710, 680, 10, 10);
+	Dot d114 = new Dot(710, 720, 10, 10);
+	Dot d115 = new Dot(270, 200, 10, 10);
+	Dot d117 = new Dot(270, 240, 10, 10);
+	Dot d118 = new Dot(270, 340, 10, 10);
+	Dot d119 = new Dot(270, 380, 10, 10);
+	Dot d120 = new Dot(270, 420, 10, 10);
+	Dot d116 = new Dot(540, 200, 10, 10);
+	Dot d129 = new Dot(540, 240, 10, 10);
+	Dot d121 = new Dot(270, 462, 10, 10);
+	Dot d122 = new Dot(270, 504, 10, 10);
+	Dot d123 = new Dot(270, 546, 10, 10);
+	Dot d124 = new Dot(270, 588, 10, 10);
+	Dot d125 = new Dot(540, 462, 10, 10);
+	Dot d126 = new Dot(540, 504, 10, 10);
+	Dot d127 = new Dot(540, 546, 10, 10);
+	Dot d128 = new Dot(540, 588, 10, 10);
+	Dot d130 = new Dot(270, 200, 10, 10);
+	Dot d131 = new Dot(540, 240, 10, 10);
+	Dot d132 = new Dot(540, 340, 10, 10);
+	Dot d133 = new Dot(540, 380, 10, 10);
+	Dot d134 = new Dot(540, 420, 10, 10);
+
 	GamePanel() {
 		t = new Timer(1000 / 60, this);
 		try {
@@ -265,8 +290,31 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		OM.addObject(d108);
 		OM.addObject(d109);
 		OM.addObject(d110);
+		OM.addObject(d111);
+		OM.addObject(d112);
+		OM.addObject(d113);
+		OM.addObject(d114);
+		OM.addObject(d115);
+		OM.addObject(d116);
+		OM.addObject(d117);
+		OM.addObject(d118);
+		OM.addObject(d119);
+		OM.addObject(d120);
+		OM.addObject(d121);
+		OM.addObject(d122);
+		OM.addObject(d123);
+		OM.addObject(d124);
+		OM.addObject(d125);
+		OM.addObject(d126);
+		OM.addObject(d127);
+		OM.addObject(d128);
+		OM.addObject(d129);
+		OM.addObject(d130);
+		OM.addObject(d131);
+		OM.addObject(d132);
+		OM.addObject(d134);
+		OM.addObject(d133);
 
-		
 		OM.addObject(new Wall(80, 80, 77, 50));
 		OM.addObject(new Wall(225, 80, 107, 50));
 		OM.addObject(new Wall(485, 80, 107, 50));

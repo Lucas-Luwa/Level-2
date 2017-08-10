@@ -508,7 +508,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 			PM.up = true;
 		}
-
+		
 	}
 
 	@Override
@@ -526,7 +526,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 	void updateGameState() {
 		OM.update();
-
+		if(OM.getScore() == 2){
+			System.out.println("XD");
+		}
 	}
 
 	void updateEndState() {

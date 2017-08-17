@@ -4,6 +4,8 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 public class ObjectManager {
 	PACMAN P;
 	Ghosts Gerald;
@@ -54,18 +56,10 @@ public class ObjectManager {
 		}
 	}
 
-	// public void manageEnemies(){
-	// if(System.currentTimeMillis() - enemyTimer >= enemySpawnTime){
-	// addObject(new Alien(new Random().nextInt(LeagueInvaders.WIDTH), 0, 50,
-	// 50));
-	// enemyTimer = System.currentTimeMillis();
-	// }
-	// }
-	//
 	public void checkCollision() {
 		boolean c = false;
 		boolean G1 = false;
-		
+
 		for (int i = 0; i < objects.size(); i++) {
 			GameObject o1 = objects.get(i);
 			if (P.collisionBox.intersects(o1.collisionBox)) {
@@ -76,24 +70,23 @@ public class ObjectManager {
 				if (o1 instanceof Dot) {
 					o1.isAlive = false;
 					score += 1;
-					System.out.println("dot");
+
 				}
 			}
-		/*	if (Gerald.collisionBox.intersects(o1.collisionBox)) {
-				if (o1 instanceof Wall) {
+			if (Gerald.collisionBox.intersects(o1.collisionBox)) {
+				if (o1 instanceof PACMAN) {
 					G1 = true;
 					Gerald.setCollidingObject(o1);
+					P.isAlive = false;
+					JOptionPane.showMessageDialog(null, "You Lost! Press ''ok'' to see your score.");
 				}
 
 			}
 
-		*/
-	
-	P.colliding=c;
-	//Gerald.colliding=G1;
+			P.colliding = c;
+
 		}
 	}
-	
 
 	public int getScore() {
 		return score;

@@ -90,15 +90,15 @@ public class Ghosts extends GameObject {
 
 			}
 		}
-		System.out.println("hi");
 		x = collisionBox.x;
 		y = collisionBox.y;
 
 	}
 
 	void draw(Graphics g) {
-		g.setColor(Color.GREEN);
-		g.fillRect(x, y, width, height);
+
+		g.drawImage(GamePanel.ghostImg, x, y, width, height, null);
+
 	}
 
 	public void setCollidingObject(GameObject o1) {

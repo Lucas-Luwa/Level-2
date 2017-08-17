@@ -86,8 +86,8 @@ public class PACMAN extends GameObject {
 	}
 
 	void draw(Graphics g) {
-		g.setColor(Color.YELLOW);
-		g.fillRect(x, y, width, height);
+
+		g.drawImage(GamePanel.PACRIMG, x, y, width, height, null);
 
 	}
 

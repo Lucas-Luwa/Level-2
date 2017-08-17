@@ -23,11 +23,14 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	final int END_STATE = 2;
 	int currentState = MENU_STATE;
 	public static BufferedImage PACIMG;
+	public static BufferedImage ghostImg;
+	public static BufferedImage PACRIMG;
 	Font titleFont = new Font("Arial", Font.BOLD, 150);
 	Font titleFont2 = new Font("Arial", Font.PLAIN, 50);
 	Font titleFont3 = new Font("Arial", Font.BOLD, 120);
 	Font titleFont4 = new Font("Arial", Font.PLAIN, 100);
 	Font titleFont5 = new Font("Arial", Font.PLAIN, 30);
+	Font titleFont6 = new Font("Arial", Font.PLAIN, 15);
 	PACMAN PM = new PACMAN(385, 660, 50, 50);
 	Ghosts Gerald = new Ghosts(400, 400, 40, 40, PM);
 
@@ -193,7 +196,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Dot d158 = new Dot(360, 505, 10, 10);
 	Dot d159 = new Dot(320, 240, 10, 10);
 	Dot d160 = new Dot(360, 240, 10, 10);
-	
 	Dot d161 = new Dot(460, 680, 10, 10);
 	Dot d162 = new Dot(460, 590, 10, 10);
 	Dot d163 = new Dot(460, 340, 10, 10);
@@ -212,6 +214,15 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Dot d176 = new Dot(460, 635, 10, 10);
 
 	GamePanel() {
+		try {
+
+			ghostImg = ImageIO.read(this.getClass().getResourceAsStream("Ghost.png"));
+			PACRIMG = ImageIO.read(this.getClass().getResourceAsStream("PACMAN.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		t = new Timer(1000 / 60, this);
 		try {
 			PACIMG = ImageIO.read(this.getClass().getResourceAsStream("PAC3.jpg"));
@@ -316,6 +327,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		OM.addObject(d91);
 		OM.addObject(d92);
 		OM.addObject(d93);
+
 		OM.addObject(d94);
 		OM.addObject(d95);
 		OM.addObject(d96);
@@ -508,7 +520,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 			PM.up = true;
 		}
-		
+
 	}
 
 	@Override
@@ -526,8 +538,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 	void updateGameState() {
 		OM.update();
-		if(OM.getScore() == 2){
-			System.out.println("XD");
+		if (PM.isAlive == false) {
+			currentState = END_STATE;
+
 		}
 	}
 
@@ -546,6 +559,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.setFont(titleFont5);
 		g.drawString("Use the Up, Down, Left and Right Keys to move.", 80, 600);
 		g.drawString("Collect all the food to win! Beware: Ghosts go through walls!", 5, 650);
+		g.drawString("Final Score Should Be 176! GOOD LUCK.", 100, 700);
+		g.setFont(titleFont6);
+		g.setColor(Color.RED);
+		g.drawString("*HINT: Use tunnels to your advantage!", 280, 800);
 	}
 
 	void drawGameState(Graphics g) {

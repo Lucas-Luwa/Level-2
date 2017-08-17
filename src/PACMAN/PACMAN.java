@@ -11,8 +11,9 @@ public class PACMAN extends GameObject {
 	boolean right = false;
 	boolean up = false;
 	boolean down = false;
-	boolean colliding = false;
 
+	boolean colliding = false;
+	
 	GameObject CollidingObject;
 
 	PACMAN(int x, int y, int width, int height) {
@@ -68,6 +69,9 @@ public class PACMAN extends GameObject {
 				collisionBox.y += speed;
 
 			}
+		
+			
+			
 
 			if (x <= -width)
 
@@ -86,9 +90,20 @@ public class PACMAN extends GameObject {
 	}
 
 	void draw(Graphics g) {
-
-		g.drawImage(GamePanel.PACRIMG, x, y, width, height, null);
-
+		
+		if (left) {
+			g.drawImage(GamePanel.PACLIMG, x, y, width, height, null);
+		}
+		if (down) {
+			g.drawImage(GamePanel.PACDIMG, x, y, width, height, null);
+		}
+		if (right) {
+			g.drawImage(GamePanel.PACRIMG, x, y, width, height, null);
+		}
+		if (up) {
+			g.drawImage(GamePanel.PACUIMG, x, y, width, height, null);
+		} 
+		
 	}
 
 	public void setCollidingObject(GameObject o) {

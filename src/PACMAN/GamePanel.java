@@ -24,7 +24,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	int currentState = MENU_STATE;
 	public static BufferedImage PACIMG;
 	public static BufferedImage ghostImg;
+	public static BufferedImage PACLIMG;
+	public static BufferedImage PACDIMG;
 	public static BufferedImage PACRIMG;
+	public static BufferedImage PACUIMG;
 	Font titleFont = new Font("Arial", Font.BOLD, 150);
 	Font titleFont2 = new Font("Arial", Font.PLAIN, 50);
 	Font titleFont3 = new Font("Arial", Font.BOLD, 120);
@@ -216,8 +219,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	GamePanel() {
 		try {
 
-			ghostImg = ImageIO.read(this.getClass().getResourceAsStream("Ghost.png"));
-			PACRIMG = ImageIO.read(this.getClass().getResourceAsStream("PACMAN.png"));
+			ghostImg = ImageIO.read(this.getClass().getResourceAsStream("Ghost.gif"));
+			PACLIMG = ImageIO.read(this.getClass().getResourceAsStream("PACMAN.png"));
+			PACDIMG = ImageIO.read(this.getClass().getResourceAsStream("PacmanD.png"));
+			PACRIMG = ImageIO.read(this.getClass().getResourceAsStream("PacmanRT.png"));
+			PACUIMG = ImageIO.read(this.getClass().getResourceAsStream("PacmanUP.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -506,6 +512,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		}
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			PM.down = true;
+			
 
 		}
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
@@ -520,6 +527,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 			PM.up = true;
 		}
+		
 
 	}
 
@@ -530,6 +538,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		PM.right = false;
 		PM.up = false;
 		PM.down = false;
+		
 	}
 
 	void updateMenuState() {
@@ -558,7 +567,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.drawString("Press ''Enter'' to continue.", 120, 400);
 		g.setFont(titleFont5);
 		g.drawString("Use the Up, Down, Left and Right Keys to move.", 80, 600);
-		g.drawString("Collect all the food to win! Beware: Ghosts go through walls!", 5, 650);
+		g.drawString("Collect all the food to win! Beware: The ghost goes through walls!", 5, 650);
 		g.drawString("Final Score Should Be 176! GOOD LUCK.", 100, 700);
 		g.setFont(titleFont6);
 		g.setColor(Color.RED);

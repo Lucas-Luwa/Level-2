@@ -512,7 +512,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		}
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			PM.down = true;
-			
 
 		}
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
@@ -527,7 +526,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 			PM.up = true;
 		}
-		
 
 	}
 
@@ -538,7 +536,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		PM.right = false;
 		PM.up = false;
 		PM.down = false;
-		
+
 	}
 
 	void updateMenuState() {
@@ -578,7 +576,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.drawImage(PACIMG, 0, 0, 814, 900, null);
 		OM.draw(g);
 		g.setColor(Color.YELLOW);
-
+		
 	}
 
 	void drawEndState(Graphics g) {

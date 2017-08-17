@@ -2,6 +2,7 @@ package PACMAN;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 
 public class PACMAN extends GameObject {
 
@@ -11,9 +12,9 @@ public class PACMAN extends GameObject {
 	boolean right = false;
 	boolean up = false;
 	boolean down = false;
-
+	BufferedImage c = GamePanel.PACLIMG;
 	boolean colliding = false;
-	
+
 	GameObject CollidingObject;
 
 	PACMAN(int x, int y, int width, int height) {
@@ -69,9 +70,6 @@ public class PACMAN extends GameObject {
 				collisionBox.y += speed;
 
 			}
-		
-			
-			
 
 			if (x <= -width)
 
@@ -90,20 +88,20 @@ public class PACMAN extends GameObject {
 	}
 
 	void draw(Graphics g) {
-		
+		g.drawImage(c, x, y, width, height, null);
 		if (left) {
-			g.drawImage(GamePanel.PACLIMG, x, y, width, height, null);
+			c = GamePanel.PACLIMG;
 		}
 		if (down) {
-			g.drawImage(GamePanel.PACDIMG, x, y, width, height, null);
+			c = GamePanel.PACDIMG;
 		}
 		if (right) {
-			g.drawImage(GamePanel.PACRIMG, x, y, width, height, null);
+			c = GamePanel.PACRIMG;
 		}
 		if (up) {
-			g.drawImage(GamePanel.PACUIMG, x, y, width, height, null);
-		} 
-		
+			c = GamePanel.PACUIMG;
+		}
+
 	}
 
 	public void setCollidingObject(GameObject o) {

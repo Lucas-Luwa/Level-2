@@ -19,7 +19,7 @@ public class PACMAN extends GameObject {
 
 	PACMAN(int x, int y, int width, int height) {
 		super(x, y, width, height);
-
+		c = GamePanel.PACUIMG;
 		speed = 3;
 
 	}
@@ -88,7 +88,8 @@ public class PACMAN extends GameObject {
 	}
 
 	void draw(Graphics g) {
-		g.drawImage(c, x, y, width, height, null);
+		c = GamePanel.PACLIMG;
+		
 		if (left) {
 			c = GamePanel.PACLIMG;
 		}
@@ -101,7 +102,7 @@ public class PACMAN extends GameObject {
 		if (up) {
 			c = GamePanel.PACUIMG;
 		}
-
+		g.drawImage(c, x, y, width, height, null);
 	}
 
 	public void setCollidingObject(GameObject o) {

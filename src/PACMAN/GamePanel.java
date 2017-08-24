@@ -33,6 +33,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Font titleFont3 = new Font("Arial", Font.BOLD, 120);
 	Font titleFont4 = new Font("Arial", Font.PLAIN, 100);
 	Font titleFont5 = new Font("Arial", Font.PLAIN, 30);
+	Font titleFont7 = new Font("Arial", Font.BOLD, 25);
 	Font titleFont6 = new Font("Arial", Font.PLAIN, 15);
 	PACMAN PM = new PACMAN(385, 660, 50, 50);
 	Ghosts Gerald = new Ghosts(400, 400, 40, 40, PM);
@@ -224,6 +225,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 			PACDIMG = ImageIO.read(this.getClass().getResourceAsStream("PacmanD.png"));
 			PACRIMG = ImageIO.read(this.getClass().getResourceAsStream("PacmanRT.png"));
 			PACUIMG = ImageIO.read(this.getClass().getResourceAsStream("PacmanUP.png"));
+		
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -239,7 +241,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		}
 		OM.addObject(Gerald);
 
-		OM.addObject(PM);
+		
 		OM.addObject(d3);
 		OM.addObject(d);
 		OM.addObject(d2);
@@ -464,6 +466,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		OM.addObject(new Wall(800, 455, 18, 450));
 		OM.addObject(new Wall(0, 455, 18, 450));
 		OM.addObject(new Wall(0, 884, 900, 20));
+		OM.addObject(PM);
 	}
 
 	void startGame() {
@@ -565,11 +568,13 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.drawString("Press ''Enter'' to continue.", 120, 400);
 		g.setFont(titleFont5);
 		g.drawString("Use the Up, Down, Left and Right Keys to move.", 80, 600);
-		g.drawString("Collect all the food to win! Beware: The ghost goes through walls!", 5, 650);
+		g.setFont(titleFont7);
+		g.drawString("Collect all the food to win! Beware: The ghost goes through walls!", 15, 650);
+		g.setFont(titleFont5);
 		g.drawString("Final Score Should Be 176! GOOD LUCK.", 100, 700);
 		g.setFont(titleFont6);
 		g.setColor(Color.RED);
-		g.drawString("*HINT: Use tunnels to your advantage!", 280, 800);
+		g.drawString("*HINT: Use teleport areas to your advantage!", 260, 800);
 	}
 
 	void drawGameState(Graphics g) {

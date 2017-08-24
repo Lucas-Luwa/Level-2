@@ -80,8 +80,17 @@ public class ObjectManager {
 					P.isAlive = false;
 					JOptionPane.showMessageDialog(null, "You Lost! Press ''ok'' to see your score.");
 				}
+				if(score == 176) {
+					G1 = true;
+					Gerald.setCollidingObject(o1);
+					P.isAlive = false;
+					JOptionPane.showMessageDialog(null, "YAY! You have won the game! Press ''ok'' to see your final score!");
+				
+				
+				}
 
 			}
+			
 
 			P.colliding = c;
 
